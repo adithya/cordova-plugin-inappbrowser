@@ -1027,6 +1027,9 @@ public class InAppBrowser extends CordovaPlugin {
                 if (enableDatabase) {
                     String databasePath = cordova.getActivity().getApplicationContext().getDir("inAppBrowserDB", Context.MODE_PRIVATE).getPath();
                     settings.setDatabasePath(databasePath);
+                    settings.setAppCacheMaxSize(5 * 1048576);
+                    settings.setAppCachePath(databasePath);
+                    settings.setAppCacheEnabled(true);
                     settings.setDatabaseEnabled(true);
                 }
                 settings.setDomStorageEnabled(true);
